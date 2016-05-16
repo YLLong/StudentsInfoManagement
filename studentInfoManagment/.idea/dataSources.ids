@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="5b86b16d-cd9d-4357-b367-a6939514de2b">
+    <database-info product="MySQL" version="5.6.24-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.39 ( Revision: 3289a357af6d09ecc1a10fd3c26e95183e5790ad )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="employee"/>
+    <schema name="" catalog="mbook"/>
+    <schema name="" catalog="stuinfomanage"/>
+    <schema name="" catalog="test"/>
+    <table name="工资表" schema="" catalog="employee" type="TABLE">
+      <column name="职工编号" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
+      <column name="基本工资" sqlType="DOUBLE" precision="9" scale="1" nullable="true" jdbcType="8" def="MC4w"/>
+      <column name="奖金" sqlType="DOUBLE" precision="9" scale="1" nullable="true" jdbcType="8" def="MC4w"/>
+      <column name="实发工资" sqlType="DOUBLE" precision="9" scale="1" nullable="true" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="职工编号"/>
+      <foreign-key name="工资表_ibfk_1" columns="职工编号" ref-table="职工基本信息表" ref-schema="" ref-catalog="employee" ref-columns="职工编号" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="职工基本信息表" schema="" catalog="employee" type="TABLE">
+      <column name="职工编号" sqlType="CHAR" precision="5" scale="0" nullable="false" jdbcType="1"/>
+      <column name="姓名" sqlType="CHAR" precision="10" scale="0" nullable="false" jdbcType="1"/>
+      <column name="性别" sqlType="CHAR" precision="2" scale="0" nullable="true" jdbcType="1" def="J+eUtyc="/>
+      <column name="出生日期" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="部门编号" sqlType="CHAR" precision="3" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="职工编号"/>
+      <foreign-key name="职工基本信息表_ibfk_1" columns="部门编号" ref-table="部门信息表" ref-schema="" ref-catalog="employee" ref-columns="部门编号" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="部门信息表" schema="" catalog="employee" type="TABLE">
+      <column name="部门编号" sqlType="CHAR" precision="3" scale="0" nullable="false" jdbcType="1"/>
+      <column name="部门名称" sqlType="CHAR" precision="20" scale="0" nullable="false" jdbcType="1"/>
+      <column name="部门简介" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="部门编号"/>
+      <index name="部门名称" unique="true" columns="部门名称"/>
+    </table>
+    <table name="goods" schema="" catalog="mbook" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="goodsName" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="num" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="yieldly" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="login" schema="" catalog="mbook" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="role" sqlType="BIT" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="students" schema="" catalog="stuinfomanage" type="TABLE">
+      <column name="sid" sqlType="VARCHAR" precision="6" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="sid"/>
+    </table>
+    <table name="users" schema="" catalog="stuinfomanage" type="TABLE">
+      <column name="uid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="uid"/>
+    </table>
+  </data-source>
+</component>

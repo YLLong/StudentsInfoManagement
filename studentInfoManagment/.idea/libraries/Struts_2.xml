@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Struts 2" type="struts2">
+    <CLASSES>
+      <root url="jar://E:/Plugins/Struts-2-core/asm-3.3.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/struts2-core-2.3.28.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/javassist-3.11.0.GA.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/xwork-core-2.3.28.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/freemarker-2.3.22.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/log4j-core-2.3.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/asm-tree-3.3.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/commons-logging-1.1.3.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/commons-io-2.2.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/log4j-api-2.3.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/asm-commons-3.3.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/commons-lang3-3.2.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/commons-fileupload-1.3.1.jar!/" />
+      <root url="jar://E:/Plugins/Struts-2-core/ognl-3.0.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
