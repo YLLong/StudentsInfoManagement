@@ -25,7 +25,15 @@
             <result name="add_success">/students/Students_add_success.jsp</result>
             <result name="modify_success">/students/Students_modify.jsp</result>
             <result name="sava_success">/students/Students_modify_success.jsp</result>
-            <result name="delete_success" type="chain">Students_query</result>
+            <result name="delete_success" type="chain">page</result>
+        </action>
+        <action name="page" class="com.uiyllong.action.PageAction">
+            <result type="redirectAction">
+                <param name="actionName">Students_query.action</param>
+                <param name="pageSize">${pageSize}</param>
+                <param name="pageNum">${pageNum}</param>
+                <param name="totalpage">${totalpage}</param>
+            </result>
         </action>
     </package>
 

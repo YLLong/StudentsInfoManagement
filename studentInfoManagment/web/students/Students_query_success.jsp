@@ -126,5 +126,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 遍历结束 -->
 </table>
 </div>
+
+<div align="center">
+    <ul>
+    第<s:property value="pageNum"/>页 | 共<s:property value="totalpage"/>页
+    <s:url action="page" id="fristPage">
+        <s:param name="pageNum">1</s:param>
+    </s:url>
+    <s:a href="%{fristPage}">首页</s:a>
+
+    <s:url action="page" id="prePage">
+        <s:param name="pageNum">
+            <s:property value="pageNum-1"/>
+        </s:param>
+    </s:url>
+    <s:a href="%{prePage}">上一页</s:a>
+
+    <s:url action="page" id="nextPage">
+        <s:param name="pageNum">
+            <s:property value="pageNum+1"/>
+        </s:param>
+    </s:url>
+    <s:a href="%{nextPage}">下一页</s:a>
+
+    <s:url action="page" id="lastPage">
+        <s:param name="pageNum">
+            <s:property value="totalpage"/>
+        </s:param>
+    </s:url>
+    <s:a href="%{lastPage}">末页</s:a>
+    </ul>
+</div>
+
 </body>
 </html>

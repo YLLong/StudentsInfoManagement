@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript"> 
 var treeMenu = [
 	{ level:1, name:"学生管理"},
-	{ level:2, name:"学生列表", ico:"images/icon_default.gif",link:"students/Students_query.action"},
+	{ level:2, name:"学生列表", ico:"images/icon_default.gif",link:"students/page"},
 	{ level:1, name:"教师管理"},
 	{ level:2, name:"教师列表", ico:"images/icon_default.gif",link:"role_list.html"},
 	{ level:1, name:"信息管理"},

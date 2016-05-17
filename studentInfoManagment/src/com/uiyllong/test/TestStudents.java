@@ -21,7 +21,6 @@ import org.junit.Test;
 
 import java.util.Date;
 import java.util.EnumSet;
-import java.util.List;
 
 /**
  * Created by uilong on 2016/5/8.
@@ -29,8 +28,18 @@ import java.util.List;
 public class TestStudents {
 
     /**
-     * 查询所有学生资料
+     * 查询数据库中有多少学生，做分页时使用该数据
      */
+    @Test
+    public void testGetStudentsCount() {
+        StudentsDAO sDAO = new StudentsDAOImpl();
+        int i = sDAO.getStudentsCount();
+        System.out.println(i);
+    }
+
+    /**
+     * 查询所有学生资料
+
     @Test
     public void testQueryAllStudents() {
         StudentsDAO sDAO = new StudentsDAOImpl();
@@ -39,6 +48,7 @@ public class TestStudents {
             System.out.println(list.get(i));
         }
     }
+     */
 
     /**
      * 向学生表中插入数据

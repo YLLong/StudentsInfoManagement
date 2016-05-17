@@ -21,6 +21,7 @@ public class SuperAction extends ActionSupport implements ServletRequestAware, S
     protected HttpServletResponse response;
     protected HttpSession session;
     protected ServletContext application;
+
     @Override
     public void setServletRequest(HttpServletRequest request) {
         this.request = request;

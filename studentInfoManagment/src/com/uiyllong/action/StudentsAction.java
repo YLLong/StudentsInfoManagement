@@ -12,13 +12,17 @@ import java.util.List;
  */
 public class StudentsAction extends SuperAction {
 
+    private int pageNum;
+    private int pageSize;
+    private int totalpage;
+
     /**
      * 查询全部学生资料
      * @return
      */
     public String query() {
         StudentsDAO sDAO = new StudentsDAOImpl();
-        List<Students> list = sDAO.queryAllStudents();
+        List<Students> list = sDAO.queryAllStudents(pageNum, pageSize);
         session.setAttribute("students_list", list);
         return "query_success";
     }
@@ -81,4 +85,27 @@ public class StudentsAction extends SuperAction {
         return "sava_success";
     }
 
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public int getTotalpage() {
+        return totalpage;
+    }
+
+    public void setTotalpage(int totalpage) {
+        this.totalpage = totalpage;
+    }
 }

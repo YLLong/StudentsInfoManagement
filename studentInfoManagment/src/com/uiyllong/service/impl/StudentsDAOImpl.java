@@ -13,9 +13,15 @@ import java.util.List;
  * Created by uilong on 2016/5/9.
  */
 public class StudentsDAOImpl implements StudentsDAO {
-    @Override
-    public List<Students> queryAllStudents() {
 
+    /**
+     * 每页显示的学生信息
+     * @param pageNum   所在页数，计算显示的是从哪个数开始，默认是0开始
+     * @param pageSize  每页显示的个数
+     * @return 返回一个 list 是该页显示的数据
+     */
+    @Override
+    public List<Students> queryAllStudents(int pageNum, int pageSize) {
         Transaction ts = null;
         List<Students> list = null;
         String hql = "";
@@ -24,6 +30,8 @@ public class StudentsDAOImpl implements StudentsDAO {
             ts = session.beginTransaction();
             hql = "from Students";
             Query query = session.createQuery(hql);
+            query.setFirstResult((pageNum - 1) * pageSize);
+            query.setMaxResults(pageSize);
             list = query.list();
             ts.commit();
             return list;
@@ -38,6 +46,39 @@ public class StudentsDAOImpl implements StudentsDAO {
 
     }
 
+    /**
+     * 计算学生总人数
+     * @return
+     */
+    @Override
+    public int getStudentsCount() {
+        int i = 0;
+        Transaction ts = null;
+        String hql = "";
+        try {
+            Session session = MyHibernateSessionFactory.getSessionFaactory().getCurrentSession();
+            ts = session.beginTransaction();
+            hql = "from Students";
+            Query query = session.createQuery(hql);
+            i = query.list().size();
+            ts.commit();
+            return i;
+        } catch (Exception e) {
+            e.printStackTrace();
+            ts.commit();
+            return i;
+        } finally {
+            if (ts != null) {
+                ts = null;
+            }
+        }
+    }
+
+    /**
+     * 通过 sid 查找学生信息
+     * @param sid
+     * @return
+     */
     @Override
     public Students queryStudentBySid(String sid) {
         Transaction ts = null;

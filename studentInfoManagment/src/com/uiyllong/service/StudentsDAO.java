@@ -10,7 +10,10 @@ import java.util.List;
 public interface StudentsDAO {
 
     //查询所有学生资料
-    public List<Students> queryAllStudents();
+    public List<Students> queryAllStudents(int pageNum, int pageSize);
+
+    //统计学生总人数
+    public int getStudentsCount();
 
     //根据 id 查询学生资料
     public Students queryStudentBySid(String sid);
